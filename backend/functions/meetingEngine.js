@@ -171,7 +171,6 @@ const runMeeting = async (meetingId, io) => {
         //------------------------------------------
         // Decide Python Action
         //------------------------------------------
-        console.log("Length: ",history.length)
         let action = "start";
 
         if (history.length > 1) {
@@ -237,9 +236,6 @@ const runMeeting = async (meetingId, io) => {
         //------------------------------------------
         // Call Python Server
         //------------------------------------------
-        console.log(
-    JSON.stringify(payload, null, 2)
-);
         const response = await axios.post(
             `${process.env.PYTHON_SERVER}/meeting`,
             payload,
@@ -249,9 +245,6 @@ const runMeeting = async (meetingId, io) => {
         );
 
         const ai = response.data;
-
-        console.log("AI Response Received", ai);
-
         //------------------------------------------
         // Save AI Message
         //------------------------------------------
