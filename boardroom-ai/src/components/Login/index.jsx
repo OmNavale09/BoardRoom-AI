@@ -19,7 +19,7 @@ const Login = () => {
     e.preventDefault();
     // Handle your authentication logic here
     console.log('Logging in with:', { email, password });
-    const response = await fetch("http://localhost:5000/login",{
+    const response = await fetch("https://boardroom-backend-k5un.onrender.com/login",{
       method: "POST",
       headers: {
         "Content-Type": "application/json",

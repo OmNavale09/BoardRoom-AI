@@ -20,7 +20,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log( JSON.stringify({username: name, email, password}))
-    const response = await fetch("http://localhost:5000/register",{
+    const response = await fetch("https://boardroom-backend-k5un.onrender.com/register",{
       method: "POST",
       headers: {
         "Content-Type": "application/json",

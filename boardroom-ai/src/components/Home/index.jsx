@@ -28,7 +28,7 @@ useEffect(() => {
     try {
       const token = Cookies.get("token");
 
-      const response = await fetch("http://localhost:5000/profile", {
+      const response = await fetch("https://boardroom-backend-k5un.onrender.com/profile", {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -55,7 +55,7 @@ useEffect(() => {
     try {
       const token = Cookies.get("token");
 
-      const response = await fetch("http://localhost:5000/meeting/titles", {
+      const response = await fetch("https://boardroom-backend-k5un.onrender.com/meeting/titles", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -102,7 +102,7 @@ useEffect(() => {
       const token = Cookies.get("token");
 
       const response = await fetch(
-        `http://localhost:5000/meetings/${activeChatId}/messages`,
+        `https://boardroom-backend-k5un.onrender.com/meetings/${activeChatId}/messages`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -149,7 +149,7 @@ const handleSendMessage = async (data) => {
     const token = Cookies.get("token");
 
     const response = await fetch(
-      `http://localhost:5000/meetings/${activeChatId}/action`,
+      `https://boardroom-backend-k5un.onrender.com/meetings/${activeChatId}/action`,
       {
         method: "POST",
         headers: {
@@ -179,7 +179,7 @@ const handleVote = async () => {
     const targetAction = "vote";
     try {
       const token = Cookies.get("token");
-      const response = await fetch(`http://localhost:5000/meetings/${activeChatId}/action`, {
+      const response = await fetch(`https://boardroom-backend-k5un.onrender.com/meetings/${activeChatId}/action`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -205,7 +205,7 @@ const handleToggleMeetingAction = async () => {
     const targetAction = isPaused ? "resume" : "pause";
     try {
       const token = Cookies.get("token");
-      const response = await fetch(`http://localhost:5000/meetings/${activeChatId}/action`, {
+      const response = await fetch(`https://boardroom-backend-k5un.onrender.com/meetings/${activeChatId}/action`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -251,7 +251,7 @@ const handleBoardSubmit = async (data) => {
 
     const token = Cookies.get("token");
 
-    const response = await fetch("http://localhost:5000/meetings/start", {
+    const response = await fetch("https://boardroom-backend-k5un.onrender.com/meetings/start", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
