@@ -1,0 +1,245 @@
+/* --- Overlay --- */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: flex-end; /* Bottom drawer on mobile layout */
+  justify-content: center;
+  z-index: 2000;
+}
+
+/* --- Container (Mobile First) --- */
+.popup-container {
+  background-color: #141414; /* Deep dark background matching main workspace */
+  border-top: 1px solid #262626;
+  border-left: 1px solid #262626;
+  border-right: 1px solid #262626;
+  border-radius: 20px 20px 0 0;
+  width: 100%;
+  max-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+  box-shadow: 0 -15px 30px rgba(0, 0, 0, 0.7);
+  animation: slideInBottom 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideInBottom {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+/* --- Header Elements --- */
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 24px 16px 24px;
+}
+
+.popup-header h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+}
+
+.popup-close-btn {
+  background: none;
+  border: none;
+  color: #737373;
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 0.5;
+  padding: 8px;
+  transition: color 0.2s;
+}
+
+.popup-close-btn:hover {
+  color: #ffffff;
+}
+
+.popup-body {
+  padding: 0 24px 32px 24px;
+  overflow-y: auto;
+  scrollbar-width: 0px;
+}
+
+.popup-subtitle {
+  color: #a3a3a3;
+  font-size: 0.95rem;
+  margin: 0 0 24px 0;
+}
+
+/* --- Grid Structure (1 Column on Mobile) --- */
+.members-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+/* --- Member Cards Layout --- */
+.member-card {
+  background-color: #1a1a1a;
+  border: 1px solid #262626;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column; /* Stack details vertically on small viewports */
+  gap: 18px;
+  text-align: left; /* Strict left alignment to fix Screenshot 2026-06-29 233849.png errors */
+}
+
+/* Purple glowing variant for the key differentiator */
+.differentiator-card {
+  border-color: rgba(99, 102, 241, 0.4);
+  background: linear-gradient(150deg, #1a1a1a 0%, #16122c 100%);
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.05);
+}
+
+/* --- Left Column Elements (Role Metas) --- */
+.member-main-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.member-icon-box {
+  background-color: #262626;
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+
+.member-icon-box span {
+  font-size: 1.4rem;
+}
+
+.member-role-title {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.diff-tag {
+  background-color: rgba(99, 102, 241, 0.2);
+  color: #a5b4fc;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.member-quote {
+  margin: 0;
+  color: #a3a3a3;
+  font-size: 0.9rem;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+/* --- Right Column Elements (Focus Lists) --- */
+.member-focus-box {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.member-focus-box h4 {
+  margin: 0;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #737373;
+}
+
+.member-focus-list {
+  margin: 0;
+  padding-left: 18px; /* Safe padding indentation for native dots */
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.member-focus-list li {
+  font-size: 0.9rem;
+  color: #e5e5e5;
+  line-height: 1.4;
+  text-align: left;
+}
+
+/* --- Tablet / Desktop Breakpoints --- */
+@media (min-width: 768px) {
+  .popup-body{
+  scrollbar-width: none !important;
+}
+  .popup-overlay {
+    align-items: center; /* Center screen modal overlay */
+    padding: 24px;
+  }
+
+  .popup-container {
+    border: 1px solid #262626;
+    border-radius: 14px;
+    max-width: 800px;
+    max-height: 80vh;
+    animation: zoomInModal 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  @keyframes zoomInModal {
+    from { opacity: 0; transform: scale(0.96); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  /* Two column grid layout for cards */
+  .members-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .popup-container {
+    max-width: 950px;
+  }
+
+  /* Splits the card internals 50/50 horizontally on desktop widescreen for an ultra-clean layout */
+  .member-card {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .member-main-info {
+    flex: 1;
+  }
+
+  .member-focus-box {
+    flex: 1;
+    border-left: 1px solid #262626;
+    padding-left: 20px;
+  }
+  
+  .differentiator-card .member-focus-box {
+    border-left-color: rgba(99, 102, 241, 0.2);
+  }
+}
+.popup-body{
+  scrollbar-width: none !important;
+}

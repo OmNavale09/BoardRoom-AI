@@ -1,0 +1,202 @@
+@baseUrl = http://localhost:5000
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNGYyODUwYjE5MzRiZjhmMDU5M2IwYyIsImlhdCI6MTc4MzU3MjU2MH0.HljpDPf1SQlUuLHXbV4UEfl50A0-r_x2M7UF6AdQ5AE
+@projectId = PROJECT_ID
+@meetingId = 6a512f71e10353e757ffda8a
+
+###########################################################
+### Health
+###########################################################
+
+GET http://localhost:8000/register
+
+
+###########################################################
+### Start Meeting (TEXT)
+###########################################################
+
+POST {{baseUrl}}/meetings/start
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+    "title":"AI Resume Coach",
+    "text":"An AI-powered platform that analyzes resumes, compares them with job descriptions, identifies missing skills, suggests improvements, and generates a personalized learning roadmap and portfolio projects to increase interview success."
+}
+
+###
+
+###########################################################
+### Start Meeting (GitHub)
+###########################################################
+
+POST {{baseUrl}}/meetings/start
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+    "projectId":"{{projectId}}",
+    "title":"GitHub Review",
+    "github":"https://github.com/user/repository"
+}
+
+###
+
+###########################################################
+### Start Meeting (PDF)
+### multipart/form-data
+###########################################################
+
+POST {{baseUrl}}/meetings/start
+Authorization: Bearer {{token}}
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="projectId"
+
+{{projectId}}
+
+--boundary
+Content-Disposition: form-data; name="title"
+
+Pitch Deck
+
+--boundary
+Content-Disposition: form-data; name="file"; filename="pitch.pdf"
+Content-Type: application/pdf
+
+< ./pitch.pdf
+
+--boundary--
+
+###
+
+###########################################################
+### Start Meeting (PPT)
+###########################################################
+
+POST {{baseUrl}}/meetings/start
+Authorization: Bearer {{token}}
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="projectId"
+
+{{projectId}}
+
+--boundary
+Content-Disposition: form-data; name="title"
+
+Startup PPT
+
+--boundary
+Content-Disposition: form-data; name="file"; filename="startup.pptx"
+Content-Type: application/vnd.openxmlformats-officedocument.presentationml.presentation
+
+< ./startup.pptx
+
+--boundary--
+
+###
+
+###########################################################
+### Pause
+###########################################################
+
+POST {{baseUrl}}/meetings/{{meetingId}}/action
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+    "action":"pause"
+}
+
+###
+
+###########################################################
+### Resume
+###########################################################
+
+POST {{baseUrl}}/meetings/{{meetingId}}/action
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+    "action":"resume"
+}
+
+###
+
+###########################################################
+### Stop
+###########################################################
+
+POST {{baseUrl}}/meetings/{{meetingId}}/action
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+    "action":"stop"
+}
+
+###
+
+###########################################################
+### Vote
+###########################################################
+
+POST {{baseUrl}}/meetings/{{meetingId}}/action
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+    "action":"vote"
+}
+
+###
+
+###########################################################
+### Skip Current Speaker
+###########################################################
+
+POST {{baseUrl}}/meetings/{{meetingId}}/action
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+    "action":"skip"
+}
+
+###
+
+###########################################################
+### Ask Question
+###########################################################
+
+POST {{baseUrl}}/meetings/{{meetingId}}/message
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+    "message":"How can this startup become profitable in the first year?"
+}
+
+###
+### Register User
+POST http://localhost:5000/register
+Content-Type: application/json
+
+{
+  "username": "omnavale",
+  "email": "omnavale128@gmail.com",
+  "password": "password123"
+}
+
+
+### Login User
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+  "email": "omnavale128@gmail.com",
+  "password": "password123"
+}

@@ -1,0 +1,78 @@
+### Health Check
+GET http://127.0.0.1:8000/
+
+###
+
+POST http://127.0.0.1:8000/meeting
+Content-Type: application/json
+
+{
+  "action": "start",
+
+  "meeting": {
+    "_id": "meeting001",
+    "title": "BoardRoom AI Discussion",
+    "status": "running"
+  },
+
+  "project": {
+    "_id": "project001",
+    "title": "AI Meeting Assistant",
+    "description": "An AI platform where multiple virtual board members discuss startup ideas before making a final investment decision."
+  },
+
+  "documents": [
+    {
+      "type": "text",
+      "title": "Startup Idea",
+      "content": "BoardRoom AI is a platform where AI personas like Investor, CTO, Marketing, Product, Security, Customer and Devil's Advocate conduct a realistic board meeting. The user uploads their startup idea, GitHub repository, PDF or PPT. Every AI member evaluates the startup from its own expertise. The Chairperson moderates the discussion, selects who speaks next, allows challenges between members, collects votes and generates the final meeting summary."
+    }
+  ],
+
+  "messages": []
+}
+### Investor Speaks
+POST http://127.0.0.1:8000/meeting
+Content-Type: application/json
+
+{
+  "action": "member_response",
+
+  "member": "Investor",
+
+  "decision": {
+    "action": "speak",
+    "nextSpeaker": "Investor",
+    "target": null,
+    "message": "Good morning, everyone. Welcome to the BoardRoom AI discussion. Today, we are here to evaluate 'AI Meeting Assistant', a platform designed to simulate realistic board meetings with AI personas to discuss startup ideas. We will assess its viability, potential, and risks. To begin, I'd like to hear from our Investor on the initial market opportunity and business model.",
+    "reason": "Opening the meeting and introducing the project. The Investor is chosen to provide an initial high-level perspective on market opportunity and business viability, which is a standard starting point for evaluating a new venture."
+  },
+
+  "meeting": {
+    "_id": "meeting001",
+    "title": "BoardRoom AI Discussion",
+    "status": "running"
+  },
+
+  "project": {
+    "_id": "project001",
+    "title": "AI Meeting Assistant",
+    "description": "An AI platform where multiple virtual board members discuss startup ideas before making a final investment decision."
+  },
+
+  "documents": [
+    {
+      "type": "text",
+      "title": "Startup Idea",
+      "content": "BoardRoom AI is a platform where AI personas like Investor, CTO, Marketing, Product, Security, Customer and Devil's Advocate conduct a realistic board meeting. The user uploads their startup idea, GitHub repository, PDF or PPT. Every AI member evaluates the startup from its own expertise. The Chairperson moderates the discussion, selects who speaks next, allows challenges between members, collects votes and generates the final meeting summary."
+    }
+  ],
+
+  "messages": [
+    {
+      "agent": "Chairperson",
+      "type": "announcement",
+      "content": "Good morning, everyone. Welcome to the BoardRoom AI discussion. Today, we are here to evaluate 'AI Meeting Assistant', a platform designed to simulate realistic board meetings with AI personas to discuss startup ideas. We will assess its viability, potential, and risks. To begin, I'd like to hear from our Investor on the initial market opportunity and business model."
+    }
+  ]
+}

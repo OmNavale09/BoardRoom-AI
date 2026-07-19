@@ -1,0 +1,204 @@
+/* Color Palette & Variables based on your dashboard */
+:root {
+  --bg-main: #121212;
+  --bg-card: #1a1a1a;
+  --bg-input: #242424;
+  --border-color: #2a2a2a;
+  --text-primary: #ffffff;
+  --text-secondary: #9e9e9e;
+  --accent-purple: #8b5cf6;
+  --accent-light-purple: #a78bfa;
+  --badge-bg: rgba(139, 92, 246, 0.1);
+  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+/* Base Setup */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-main);
+  font-family: var(--font-family);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Mobile-First Layout Container */
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: var(--bg-main);
+}
+
+/* Mobile Full-width Card Layout */
+.login-card {
+  width: 100%;
+  max-width: 440px;
+  background-color: transparent; /* Seamless on small mobile viewports */
+  padding: 12px;
+}
+
+/* Header Branding Alignment */
+.brand-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.brand-accent {
+  color: var(--accent-light-purple);
+}
+
+.badge-hackathon {
+  font-size: 0.75rem;
+  color: var(--accent-light-purple);
+  border: 1px solid var(--accent-purple);
+  background-color: var(--badge-bg);
+  padding: 4px 10px;
+  border-radius: 99px;
+  font-weight: 500;
+}
+
+/* Intro Text */
+.login-intro {
+  margin-bottom: 32px;
+}
+
+.login-intro h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.login-intro p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Form Styles */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-group label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.password-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.forgot-link {
+  font-size: 0.85rem;
+  color: var(--accent-light-purple);
+  text-decoration: none;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}
+
+/* Form inputs built with standard mobile tap-target sizes (48px+ height) */
+.login-form input {
+  width: 100%;
+  height: 48px;
+  padding: 0 16px;
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.login-form input:focus {
+  outline: none;
+  border-color: var(--accent-purple);
+  box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.25);
+}
+
+/* Primary Action Button */
+.btn-submit {
+  width: 100%;
+  height: 48px;
+  margin-top: 10px;
+  background-color: var(--accent-purple);
+  border: none;
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-submit:hover {
+  background-color: #7c3aed;
+}
+
+.btn-submit:active {
+  transform: scale(0.99);
+}
+
+/* Footer elements */
+.login-footer {
+  margin-top: 32px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.login-footer a {
+  color: var(--accent-light-purple);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Tablet & Desktop Layout Adaptations */
+@media (min-width: 480px) {
+  .login-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  }
+}

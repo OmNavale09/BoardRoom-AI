@@ -1,0 +1,310 @@
+/* ==========================================================================
+   MOBILE-FIRST GLOBAL BASE STYLES
+   ========================================================================== */
+
+.boardroom-app {
+  display: flex;
+  background-color: #212121;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: #212121;
+  overflow-y: auto;
+}
+
+/* Header Layout & Components */
+.header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.menu-toggle-btn {
+  background: transparent;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  margin-right: auto;
+}
+
+.menu-toggle-btn:hover {
+  background-color: #2f2f2f;
+  color: #f3f4f6;
+}
+
+.badge {
+  background-color: #2f2f2f;
+  color: #a855f7;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid #424242;
+}
+
+/* Center Container Structure */
+.center-container {
+  flex: 1;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+/* Branding Presentation */
+.brand-section {
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: 24px;
+}
+
+.main-title {
+  font-size: 32px;
+  height: 32px;
+  font-weight: 700;
+  color: #f3f4f6;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.5px;
+  background: linear-gradient(to right, #ffffff, #9ca3af);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #9b9b9b;
+  margin: 0;
+  padding: 0 8px;
+}
+
+/* Suggestion Grid Layout (Mobile: Stacked Column List) */
+.suggestions-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.suggestion-card {
+  background-color: #171717;
+  border: 1px solid #2f2f2f;
+  border-radius: 12px;
+  padding: 14px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: auto;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.suggestion-card:hover {
+  background-color: #2a2a2a;
+  border-color: #424242;
+}
+
+.card-text {
+  color: #ececec;
+  font-size: 13px;
+  line-height: 1.4;
+  margin: 0 0 8px 0;
+}
+
+.card-action {
+  font-size: 11px;
+  color: #9b9b9b;
+  font-weight: 500;
+}
+
+/* Input / Control Workspace */
+.input-form {
+  width: 100%;
+  margin-bottom: auto;
+}
+
+.attach-btn, .submit-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.attach-btn {
+  color: #9ca3af;
+}
+
+.attach-btn:hover {
+  background-color: #2f2f2f;
+  color: #f3f4f6;
+}
+
+.submit-btn {
+  color: #171717;
+  background-color: #f3f4f6;
+  width: 28px;
+  height: 28px;
+}
+
+.submit-btn:disabled {
+  background-color: #2f2f2f;
+  color: #6b7280;
+  cursor: not-allowed;
+}
+
+.submit-btn:not(:disabled):hover {
+  background-color: #ffffff;
+  transform: scale(1.02);
+}
+
+.disclaimer {
+  color: #6b7280;
+  font-size: 10px;
+  text-align: center;
+  margin-top: 8px;
+  line-height: 1.4;
+  padding: 0 10px;
+}
+
+/* ==========================================================================
+   RESPONSIVE MODAL DRAWER MECHANICS (Mobile Viewports Only)
+   ========================================================================== */
+
+.sidebar-wrapper {
+  position: fixed;
+  top: 0;
+  left: -260px; /* Parked clean out of context frame bounds */
+  width: 260px;
+  height: 100vh;
+  z-index: 1000;
+  /* Hardware-accelerated transitions via layout composites */
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Activated State via Modifying Class */
+.sidebar-wrapper.open {
+  transform: translateX(260px);
+}
+
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: -1;
+}
+
+/* ==========================================================================
+   PROGRESSIVE ENHANCEMENT: DESKTOP LAYOUT (768px and Up)
+   ========================================================================== */
+
+@media (min-width: 768px) {
+  .header-actions {
+    padding: 16px 24px;
+    justify-content: flex-end; /* Drops menu space cleanly */
+  }
+  
+  .menu-toggle-btn {
+    display: none; /* Strip out button on high resolution screens */
+  }
+
+  .badge {
+    font-size: 12px;
+    padding: 4px 12px;
+    cursor: pointer;
+  }
+
+  .center-container {
+    padding: 0 20px 20px 20px;
+    justify-content: center;
+  }
+
+  .brand-section {
+    margin-top: 0;
+    margin-bottom: 40px;
+  }
+
+  .main-title {
+    font-size: 44px;
+    height: 44px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  /* Transition suggestions panel to an expansive grid matrix layout */
+  .suggestions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+
+  .suggestion-card {
+    min-height: 100px;
+    padding: 16px;
+  }
+
+  .card-text {
+    margin-bottom: 12px;
+  }
+
+  .input-form {
+    margin-bottom: 0;
+  }
+
+  .input-wrapper input {
+    font-size: 15px;
+    padding: 10px 0;
+  }
+
+  .submit-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .disclaimer {
+    font-size: 11px;
+    margin-top: 12px;
+  }
+
+  /* Break the sidebar back into static multi-column layout context */
+  .sidebar-wrapper {
+    position: relative;
+    left: 0;
+    transform: none !important; /* Forces structural stability over drawer rules */
+  }
+}
