@@ -51,7 +51,7 @@ const pauseMeetingEngine = (meetingId) => {
 Resume
 =====================================================
 */
-const resumeMeetingEngine = (meetingId, io) => {
+const resumeMeetingEngine = async (meetingId, io) => {
     const meeting = await Meeting.findById(meetingId);
 
     if (!meeting) {
