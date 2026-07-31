@@ -52,6 +52,19 @@ Resume
 =====================================================
 */
 const resumeMeetingEngine = (meetingId, io) => {
+    const meeting = await Meeting.findById(meetingId);
+
+    if (!meeting) {
+        stopMeetingEngine(meetingId);
+        return;
+    }
+    if (
+        meeting.status === "completed" ||
+        meeting.status === "stopped"
+    ) {
+        stopMeetingEngine(meetingId);
+        return;
+    }
     const id = meetingId.toString();
     const state = activeMeetings.get(id);
     if (!state) {
