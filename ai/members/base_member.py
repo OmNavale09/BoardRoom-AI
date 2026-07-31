@@ -1,5 +1,5 @@
 from langchain_core.messages import HumanMessage, SystemMessage
-
+from utils.conversation_builder import ConversationBuilder
 from services.gemini import gemini
 
 
@@ -10,6 +10,7 @@ class BaseMember:
         self.prompt = prompt
 
     async def generate(self, request, schema, instruction: str):
+        history = ConversationBuilder.build(request.messages)
 
         structured_llm = self.llm.with_structured_output(schema)
 
@@ -17,9 +18,31 @@ class BaseMember:
             SystemMessage(content=self.prompt),
             HumanMessage(
                 content=f"""
-{request.model_dump_json(indent=2)}
+MEETING
+
+Title:
+{request.meeting.title}
+
+Description:
+{request.project.description}
+
+Stage:
+{request.project.stage or "Not specified"}
+
+Category:
+{request.project.category or "Not specified"}
+
+----------------------------------------
+
+DISCUSSION
+
+{history}
+
+----------------------------------------
+
+CURRENT TASK
 
 {instruction}
 """
-            )
+)
         ])

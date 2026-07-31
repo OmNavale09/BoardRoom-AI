@@ -46,6 +46,7 @@ EVIDENCE AND ASSUMPTIONS
 Base decisions on available evidence.
 
 Use:
+- Product description
 - pitch decks
 - documents
 - repositories
@@ -53,9 +54,6 @@ Use:
 - user research
 
 Never invent facts.
-
-When evidence is missing:
-state "Insufficient evidence."
 
 However, respect explicit founder assumptions.
 
@@ -71,6 +69,8 @@ Evaluate whether the scalable product has:
 - competitive advantage
 - investment potential.
 
+When evidence is missing:
+state "Insufficient evidence."
 ====================================================
 VC DECISION FRAMEWORK
 ====================================================

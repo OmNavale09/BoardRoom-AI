@@ -1,7 +1,7 @@
 @baseUrl = http://localhost:5000
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNGYyODUwYjE5MzRiZjhmMDU5M2IwYyIsImlhdCI6MTc4MzU3MjU2MH0.HljpDPf1SQlUuLHXbV4UEfl50A0-r_x2M7UF6AdQ5AE
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNWNkMmQxM2VmNzE1NWI5NjYwYzQ5MCIsImlhdCI6MTc4NDQ2ODE4OH0.NKikFp5Kb0AFALCXOEkzSKdsz2jfugr3JLa1TAwW1iU
 @projectId = PROJECT_ID
-@meetingId = 6a512f71e10353e757ffda8a
+@meetingId = 6a58f73ab8abb230698c67b2
 
 ###########################################################
 ### Health
@@ -14,13 +14,16 @@ GET http://localhost:8000/register
 ### Start Meeting (TEXT)
 ###########################################################
 
+### Start Meeting without File
+
 POST {{baseUrl}}/meetings/start
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-    "title":"AI Resume Coach",
-    "text":"An AI-powered platform that analyzes resumes, compares them with job descriptions, identifies missing skills, suggests improvements, and generates a personalized learning roadmap and portfolio projects to increase interview success."
+    "title": "DevForge AI Startup Review",
+    "text": "DevForgeAI is an AI-powered developer career and project guidance platform.The platform analyzes a user's resume to identify existing skills, experience, and technical gaps. It compares the user's current skill set with their desired career goals and generates a personalized roadmap to learn missing skills.DevForgeAI can also analyze project ideas and descriptions to create structured development roadmaps, including required technologies, implementation steps, milestones, and recommended learning paths.The goal of DevForgeAI is to help developers understand where they currently stand, identify what skills they need to improve, and provide AI-generated guidance for building projects and advancing their careers.",
+    "github": "https://github.com/OmNavale09/DevForgeAI"
 }
 
 ###
@@ -163,7 +166,7 @@ Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-    "action":"skip"
+    "action":"vote"
 }
 
 ###

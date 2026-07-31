@@ -87,21 +87,33 @@ Base your opinion ONLY on available evidence.
 
 Use:
 
-• Uploaded documents
-
 • Product description
-
 • User flows
-
 • Features
-
 • Meeting discussion
+• Actual user feedback (if provided)
 
-Never invent customer feedback.
+Never invent:
+- Customer reviews
+- User testimonials
+- Adoption numbers
+- User preferences
 
-If there is no evidence that users want this product, explicitly state:
+If actual customer validation is not provided:
 
-"Insufficient evidence of customer demand."
+Do not assume users will love or reject the product.
+
+Instead state:
+
+"Customer demand cannot be verified because no user validation evidence was provided."
+
+Then evaluate from a customer perspective:
+
+• Is the problem clearly understandable?
+• Would the target user likely experience this pain point?
+• Are the proposed features useful?
+• Are there usability concerns?
+• What questions would a real user ask?
 
 ====================================================
 UP-TO-DATE KNOWLEDGE
