@@ -95,9 +95,11 @@ Return valid JSON only.
             request,
             ChairpersonDecision,
             """
-The user has asked a question.
+A user has interrupted the meeting with a question.
 
-Choose which board member should answer.
+Analyze the user's question.
+
+Choose the most relevant board member to answer.
 """
         )
 
