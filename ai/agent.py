@@ -82,7 +82,19 @@ class MeetingAgent:
             }
 
         elif action == "summary":
-            return await self.chairperson.summary(request)
+            decision = await self.chairperson.summary(request)
+
+            return {
+        "message": {
+            "agent": "Chairperson",
+            "type": "summary",
+            "content": decision.message,
+            "replyTo": None,
+            "confidence": None,
+            "metadata": {}
+        },
+        "nextDecision": None
+            }
 
         elif action == "user_message":
             return await self.chairperson.handle_user_message(request)
