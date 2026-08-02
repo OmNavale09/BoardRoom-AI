@@ -119,7 +119,7 @@ details:[
 
 export default function Team() {
   return (
-    <section className="team-section">
+    <section className="team-section" id="ai-board-members">
 
       <div className="team-badge">
         ✨ MEET YOUR AI EXECUTIVES

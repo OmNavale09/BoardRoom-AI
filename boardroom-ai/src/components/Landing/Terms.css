@@ -26,6 +26,7 @@
 
 .terms-title span{
     background:linear-gradient(90deg,#60a5fa,#8b5cf6,#ec4899);
+    background-clip: text;
     -webkit-background-clip:text;
     color:transparent;
 }

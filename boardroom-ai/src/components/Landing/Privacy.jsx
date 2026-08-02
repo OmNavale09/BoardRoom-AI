@@ -33,7 +33,7 @@ const privacyItems = [
 
 export default function Privacy() {
   return (
-    <section className="privacy-section">
+    <section className="privacy-section" id="privacy-policy">
 
       <div className="privacy-badge">
         🔒 PRIVACY & SECURITY

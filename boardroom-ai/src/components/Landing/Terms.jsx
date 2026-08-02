@@ -32,7 +32,7 @@ const terms = [
 
 export default function Terms() {
   return (
-    <section className="terms-section">
+    <section className="terms-section" id="terms-of-service">
 
       <div className="terms-badge">
         📋 TERMS & CONDITIONS

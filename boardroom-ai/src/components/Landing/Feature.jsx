@@ -78,7 +78,7 @@ export default function Features() {
   ];
 
   return (
-    <section className="features-section">
+    <section className="features-section" id="features">
 
       <div className="particles">
         <span></span>

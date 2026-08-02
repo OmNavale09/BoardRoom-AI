@@ -9,7 +9,7 @@ export default function Hero()
         navigate('/')
     }
     return(
-<section className='hero'>
+<section className='hero' id="About">
     <div className='left'>
         <h1>Meet The <span>BoardRoom</span><br/>of Tomorrow</h1>
         <p>Bring together intelligent AI board members that think, strategize and collaborate with you. Turn ideas into execution from one powerful platform.</p>

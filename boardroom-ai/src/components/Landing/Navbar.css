@@ -1,1 +1,5 @@
 .nav{display:flex;justify-content:space-between;align-items:center;padding:30px 70px}.logo{font-size:34px;font-weight:700}.logo span{color:#8b5cf6}.nav ul{display:flex;gap:34px;list-style:none;color:#d1d5db}.nav li:hover{color:#8b5cf6;cursor:pointer}
+.link {
+    text-decoration: none;
+    color: inherit;
+}
