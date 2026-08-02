@@ -6,8 +6,8 @@ import './index.css';
 
 const Login = () => {
   const navigate = useNavigate()
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('omnavale128@gmail.com');
+  const [password, setPassword] = useState('123456');
 
   useEffect(() => {
       if(Cookies.get('token')){
