@@ -1,0 +1,145 @@
+.terms-section{
+    padding:70px 8%;
+    background:#070b17;
+    color:#fff;
+}
+
+.terms-badge{
+    width:fit-content;
+    margin:auto;
+    padding:12px 28px;
+    border-radius:999px;
+    background:rgba(139,92,246,.08);
+    border:1px solid rgba(139,92,246,.35);
+    color:#c084fc;
+    font-size:14px;
+    letter-spacing:1px;
+    margin-bottom:25px;
+}
+
+.terms-title{
+    text-align:center;
+    font-size:56px;
+    font-weight:800;
+    margin-bottom:18px;
+}
+
+.terms-title span{
+    background:linear-gradient(90deg,#60a5fa,#8b5cf6,#ec4899);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.terms-subtitle{
+    max-width:720px;
+    margin:auto;
+    text-align:center;
+    color:#b5bfd1;
+    font-size:18px;
+    line-height:1.8;
+    margin-bottom:70px;
+}
+
+.terms-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:28px;
+}
+
+.terms-card{
+
+    background:rgba(18,24,42,.75);
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:24px;
+
+    padding:30px;
+
+    transition:.35s;
+
+}
+
+.terms-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#8b5cf6;
+
+    box-shadow:0 0 35px rgba(139,92,246,.35);
+
+}
+
+.terms-icon{
+
+    width:70px;
+    height:70px;
+
+    border-radius:18px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    margin-bottom:24px;
+
+    background:linear-gradient(
+        135deg,
+        #7c3aed,
+        #2563eb
+    );
+
+    color:#fff;
+
+    box-shadow:0 0 25px rgba(124,58,237,.35);
+
+    transition:.35s;
+
+}
+
+.terms-card:hover .terms-icon{
+
+    transform:scale(1.08);
+
+}
+
+.terms-card h3{
+
+    font-size:24px;
+    margin-bottom:14px;
+
+}
+
+.terms-card p{
+
+    color:#c6cfdd;
+    font-size:16px;
+    line-height:1.8;
+
+}
+
+@media(max-width:900px){
+
+    .terms-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .terms-title{
+
+        font-size:40px;
+
+    }
+
+    .terms-subtitle{
+
+        font-size:16px;
+
+    }
+
+}

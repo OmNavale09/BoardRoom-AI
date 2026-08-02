@@ -1,6 +1,7 @@
 import React from 'react';
 import './index.css';
 import { HiOutlineLogout } from "react-icons/hi";
+import { IoChatbubbles } from "react-icons/io5";
 import { useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie'
 
@@ -37,15 +38,7 @@ export default function Sidebar({ currentChatId, onSelectChat, meetings, name}) 
               }`}
               onClick={() => onSelectChat(meeting.meetingId)}
             >
-              <svg
-                className="chat-icon"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-              </svg>
+              <IoChatbubbles />
 
               <div className='meeting-title-con'>
                 <span className="meeting-title">

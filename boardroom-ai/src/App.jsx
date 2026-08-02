@@ -6,11 +6,13 @@ import Home from './components/Home'
 import Login from './components/Login'
 import Register from './components/Register'
 import ProtectedRoute from './components/ProtectedRoutes'
+import Landing from './components/Landing'
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path='/landing' element={<Landing />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
         

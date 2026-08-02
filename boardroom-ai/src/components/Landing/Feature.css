@@ -1,0 +1,348 @@
+.features-section{
+    position:relative;
+    padding:60px 8% 60px;
+    background:#070b17;
+    color:#fff;
+    overflow:hidden;
+}
+
+/* ---------- Floating Particles ---------- */
+
+.particles span{
+    width:4px;
+    height:4px;
+    background:#8b5cf6;
+    border-radius:50%;
+    opacity:.2;
+    filter:blur(1px);
+    animation:float 10s linear infinite;
+}
+
+.particles span:nth-child(1){
+    top:15%;
+    left:18%;
+}
+
+.particles span:nth-child(2){
+    top:28%;
+    right:15%;
+}
+
+.particles span:nth-child(3){
+    top:72%;
+    left:25%;
+}
+
+.particles span:nth-child(4){
+    top:60%;
+    right:20%;
+}
+
+.particles span:nth-child(5){
+    top:40%;
+    left:50%;
+}
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0px);
+        opacity:.3;
+    }
+
+    50%{
+        transform:translateY(-18px);
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(0px);
+        opacity:.3;
+    }
+
+}
+
+/* ---------- Heading ---------- */
+
+.section-top{
+    text-align:center;
+    margin-bottom:70px;
+}
+
+.badge{
+    display:inline-block;
+    padding:12px 24px;
+    border-radius:999px;
+    color:#b794f4;
+    border:1px solid rgba(139,92,246,.35);
+    background:rgba(139,92,246,.08);
+    margin-bottom:30px;
+    font-size:14px;
+}
+
+.section-top h2{
+
+    font-size:58px;
+    margin-bottom:20px;
+    font-weight:800;
+
+}
+
+.section-top h2 span{
+
+    background:linear-gradient(90deg,#60a5fa,#8b5cf6,#ec4899);
+    -webkit-background-clip:text;
+    color:transparent;
+
+}
+
+.section-top p{
+
+    max-width:720px;
+    margin:auto;
+    color:#9ea6bb;
+    line-height:1.8;
+    font-size:18px;
+
+}
+
+/* ---------- Grid ---------- */
+
+.feature-grid{
+
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:35px;
+
+}
+
+/* ---------- Panels ---------- */
+
+.panel{
+
+    position:relative;
+
+    padding:25px;
+
+    border-radius:28px;
+
+    border:1px solid rgba(139,92,246,.2);
+
+    background:rgba(18,24,42,.65);
+
+    backdrop-filter:blur(18px);
+
+    overflow:hidden;
+
+    transition:.4s;
+
+}
+
+.panel::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:280px;
+
+    height:280px;
+
+    background:#7c3aed;
+
+    filter:blur(140px);
+
+    opacity:.12;
+
+    top:-120px;
+
+    right:-100px;
+
+}
+
+.panel:hover{
+
+    border-color:#8b5cf6;
+
+    box-shadow:0 0 45px rgba(124,58,237,.28);
+
+    transform:translateY(-8px);
+
+}
+
+/* ---------- Heading ---------- */
+
+.panel-heading{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:35px;
+
+}
+
+.panel-heading svg{
+
+    color:#8b5cf6;
+
+}
+
+.panel-heading h3{
+
+    font-size:31px;
+
+}
+
+/* ---------- Cards ---------- */
+
+.item{
+
+    position:relative;
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:18px;
+
+    margin-bottom:10px;
+
+    padding:14px;
+
+    border-radius:18px;
+
+    transition:.35s;
+
+    overflow:hidden;
+
+}
+
+.item:hover{
+
+    background:rgba(139,92,246,.08);
+
+    transform:translateX(10px);
+
+}
+
+/* ---------- Animated Left Border ---------- */
+
+.left-border{
+
+    position:absolute;
+
+    left:0;
+
+    top:15%;
+
+    width:4px;
+
+    height:0;
+
+    background:linear-gradient(#60a5fa,#8b5cf6);
+
+    border-radius:20px;
+
+    transition:.35s;
+
+}
+
+.item:hover .left-border{
+
+    height:70%;
+
+}
+
+/* ---------- Icon ---------- */
+
+.icon-box{
+
+    min-width:60px;
+
+    height:60px;
+
+    border-radius:18px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#fff;
+
+    background:linear-gradient(135deg,#7c3aed,#2563eb);
+
+    box-shadow:0 0 25px rgba(124,58,237,.35);
+
+    transition:.35s;
+
+}
+
+.item:hover .icon-box{
+
+    transform:scale(1.08) rotate(-4deg);
+
+}
+
+/* ---------- Text ---------- */
+
+.text h4{
+
+    font-size:21px;
+
+    margin-bottom:8px;
+
+}
+
+.text p{
+
+    color:#b3bdd0;
+
+    line-height:1.6;
+
+    font-size:15px;
+
+}
+
+/* ---------- Responsive ---------- */
+
+@media(max-width:1100px){
+
+    .feature-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .features-section{
+
+        padding:80px 6%;
+
+    }
+
+    .section-top h2{
+
+        font-size:40px;
+
+    }
+
+    .cta-strip{
+
+        flex-direction:column;
+
+        text-align:center;
+
+        gap:25px;
+
+    }
+
+}
+.app{min-height:100vh;background:#070b17;color:#fff;}
